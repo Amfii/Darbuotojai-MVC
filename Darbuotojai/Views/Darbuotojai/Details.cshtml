@@ -1,0 +1,50 @@
+﻿@model Darbuotojai.Models.Darbuotojas
+
+@{
+    ViewBag.Title = "Detalės";
+}
+
+<h2>Detalės</h2>
+
+<div>
+    <h4>Darbuotojas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavardė)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavardė)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GimimoMetai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GimimoMetai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefonas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefonas)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Redaguoti", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Grįžti į sąrašą", "Index")
+</p>

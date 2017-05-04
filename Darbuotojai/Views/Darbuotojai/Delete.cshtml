@@ -1,0 +1,56 @@
+﻿@model Darbuotojai.Models.Darbuotojas
+
+@{
+    ViewBag.Title = "Ištrinti";
+}
+
+<h2>Ištrinti</h2>
+
+<h3>Ar tikrai norite panaikinti šį darbuotoją?</h3>
+<div>
+    <h4>Darbuotojas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vardas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavardė)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavardė)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GimimoMetai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GimimoMetai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefonas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefonas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Ištrinti" class="btn btn-default" /> |
+            @Html.ActionLink("Grįžti į sąrašą", "Index")
+        </div>
+    }
+</div>

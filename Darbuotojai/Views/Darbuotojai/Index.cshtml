@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Darbuotojai.Models.Darbuotojas>
+
+@{
+    ViewBag.Title = "Sąrašas";
+}
+
+<h2>Sąrašas</h2>
+
+<p>
+    @Html.ActionLink("Pridėti naują", "Create")
+    @using (Html.BeginForm())
+    {
+    <p>
+        Paieška: @Html.TextBox("SearchString") 
+        <input type="submit" value="Ieškoti" />
+    </p>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Vardas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pavardė)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GimimoMetai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefonas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vardas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pavardė)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GimimoMetai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Telefonas)
+        </td>
+        <td>
+            @Html.ActionLink("Redaguoti", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Detalės", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Ištrinti", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
